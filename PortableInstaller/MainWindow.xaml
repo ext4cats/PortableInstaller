@@ -21,22 +21,22 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
-        
+
         <Label Grid.Row="0" Grid.Column="0" Target="{ Binding ElementName=ApplicationNameInput }">Application name:</Label>
         <TextBox Grid.Row="1" Grid.Column="0" Name="ApplicationNameInput" Margin="0,0,0,0" />
-        
+
         <Separator Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,15,0,5" />
-        
+
         <Label Grid.Row="3" Grid.Column="0" Target="{ Binding ElementName=TargetExecutableInput }">Target executable:</Label>
         <TextBox Grid.Row="4" Grid.Column="0" Name="TargetExecutableInput" />
-        <Button Grid.Row="4" Grid.Column="1" Margin="10,0,0,0">Browse...</Button>
-        
+        <Button Grid.Row="4" Grid.Column="1" Name="TargetExecutableBrowseButton" Click="TargetExecutableBrowseButton_OnClick" Margin="10,0,0,0">Browse...</Button>
+
         <Label Grid.Row="5" Grid.Column="0" Target="{ Binding ElementName=ParentDirectoryInput }" Margin="0,10,0,0">
-            <CheckBox>Use parent directory:</CheckBox>
+            <CheckBox Name="UseParentDirectoryCheckBox" Checked="UseParentDirectoryCheckBox_OnChecked" Unchecked="UseParentDirectoryCheckBox_OnUnchecked">Use parent directory:</CheckBox>
         </Label>
         <TextBox Grid.Row="6" Grid.Column="0" IsEnabled="False" Name="ParentDirectoryInput" />
-        <Button Grid.Row="6" Grid.Column="1" IsEnabled="False" Padding="15,0" Margin="10,0,0,0">Browse...</Button>
-        
-        <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,15,0,0">Install</Button>
+        <Button Grid.Row="6" Grid.Column="1" IsEnabled="False" Name="ParentDirectoryBrowseButton" Click="ParentDirectoryBrowseButton_OnClick" Padding="15,0" Margin="10,0,0,0">Browse...</Button>
+
+        <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Name="InstallButton" Click="InstallButton_OnClick" Margin="0,15,0,0">Install</Button>
     </Grid>
 </Window>
