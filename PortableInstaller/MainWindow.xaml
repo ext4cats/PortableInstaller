@@ -5,8 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PortableInstaller"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        Title="PortableInstaller" Width="400" SizeToContent="Height" ResizeMode="NoResize">
+    <Grid Margin="15,5,15,15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        
+        <Label Grid.Row="0" Grid.Column="0" Target="{ Binding ElementName=ApplicationNameInput }">Application name:</Label>
+        <TextBox Grid.Row="1" Grid.Column="0" Name="ApplicationNameInput" Margin="0,0,0,0" />
+        
+        <Separator Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,15,0,5" />
+        
+        <Label Grid.Row="3" Grid.Column="0" Target="{ Binding ElementName=TargetExecutableInput }">Target executable:</Label>
+        <TextBox Grid.Row="4" Grid.Column="0" Name="TargetExecutableInput" />
+        <Button Grid.Row="4" Grid.Column="1" Margin="10,0,0,0">Browse...</Button>
+        
+        <Label Grid.Row="5" Grid.Column="0" Target="{ Binding ElementName=ParentDirectoryInput }" Margin="0,10,0,0">
+            <CheckBox>Use parent directory:</CheckBox>
+        </Label>
+        <TextBox Grid.Row="6" Grid.Column="0" IsEnabled="False" Name="ParentDirectoryInput" />
+        <Button Grid.Row="6" Grid.Column="1" IsEnabled="False" Padding="15,0" Margin="10,0,0,0">Browse...</Button>
+        
+        <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,15,0,0">Install</Button>
     </Grid>
 </Window>
